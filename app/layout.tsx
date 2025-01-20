@@ -9,22 +9,22 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "StoreIt",
-  description: "The only storage solution you will ever need.",
+    title: "StoreIt",
+    description: "The only storage solution you will ever need.",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${poppins.variable} font-poppins antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body
+                className={`${poppins.variable} font-poppins antialiased`}
+            >
+                {children}
+            </body>
+        </html>
+    );
 }
