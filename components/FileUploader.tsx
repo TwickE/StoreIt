@@ -45,19 +45,19 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
                 if(uploadedFile) {
                     setFiles((prevFiles) => {
                         return prevFiles.filter((f) => f.name !== file.name);
-                    })
+                    });
                 }
             });
         });
         await Promise.all(uploadPromisses);
-    }, [ownerId, accountId, path]);
+    }, [ownerId, accountId, path, toast]);
     const { getRootProps, getInputProps } = useDropzone({ onDrop })
 
-    const handleRemoveFile = (e: MouseEvent<HTMLImageElement, MouseEvent>, fileName: string) => {
+    const handleRemoveFile = (e: MouseEvent<HTMLImageElement>, fileName: string) => {
         e.stopPropagation();
         setFiles((prevFiles) => {
             return prevFiles.filter((file) => file.name !== fileName);
-        })
+        });
     }
 
     return (

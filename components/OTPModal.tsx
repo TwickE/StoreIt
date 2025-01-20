@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/input-otp"
 import Image from "next/image"
 
-import React, { useState } from "react"
+import { useState, MouseEvent } from "react"
 import { Button } from "@/components/ui/button"
 import { verifySecret, sendEmailOTP } from "@/lib/actions/user.actions"
 import { useRouter } from "next/navigation"
@@ -28,9 +28,11 @@ const OTPModal = ({ accountId, email }: { accountId: string, email: string }) =>
     const [isOpen, setIsOpen] = useState(true);
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [otpError, setOtpError] = useState(false);
 
-    const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        setOtpError(false);
         setIsLoading(true);
         try {
             const sessionId = await verifySecret({ accountId, password });
@@ -39,7 +41,9 @@ const OTPModal = ({ accountId, email }: { accountId: string, email: string }) =>
             }
         } catch (error) {
             console.log("Failed to verify OTP", error);
+            setOtpError(true);
             setIsLoading(false);
+
         }
     }
 
@@ -79,6 +83,9 @@ const OTPModal = ({ accountId, email }: { accountId: string, email: string }) =>
 
                 <AlertDialogFooter>
                     <div className="flex w-full flex-col gap-4">
+                        {otpError && (
+                            <p className="error-message text-center">Invalid OTP. Please try again.</p>
+                        )}
                         <AlertDialogAction onClick={handleSubmit} className="shad-submit-btn h-12" type="button" disabled={isLoading}>
                             Submit
                             {isLoading && (

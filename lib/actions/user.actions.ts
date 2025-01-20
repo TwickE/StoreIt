@@ -21,7 +21,7 @@ const getUserByEmail = async (email: string) => {
 }
 
 const handleError = (error: unknown, message: string) => {
-    console.error(error, message);
+    console.log(error, message);
     throw error;
 }
 
