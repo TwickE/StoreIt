@@ -38,7 +38,7 @@ const ActionsDrowdown = ({ file }: { file: Models.Document }) => {
     const path = usePathname();
 
     useEffect(() => {
-        setName(file.name);
+        setName(file.name.replace(/\.[^/.]+$/, ""));
     }, [file.name]);
 
     const closeAllModels = () => {
