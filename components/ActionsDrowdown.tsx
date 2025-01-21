@@ -23,7 +23,7 @@ import { Models } from "node-appwrite";
 import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { renameFile, updateFileUsers, removeFileUser } from "@/lib/actions/file.actions";
+import { renameFile, updateFileUsers, removeFileUser, deleteFile } from "@/lib/actions/file.actions";
 import { usePathname } from "next/navigation";
 import { FileDetails, ShareInput } from "@/components/ActionsModalContent";
 import { getCurrentUser } from "@/lib/actions/user.actions";
@@ -60,7 +60,7 @@ const ActionsDrowdown = ({ file }: { file: Models.Document }) => {
         const actions = {
             rename: () => renameFile({ fileId: file.$id, name, extension: file.extension, path }),
             share: () => updateFileUsers({ fileId: file.$id, emails, path }),
-            delete: () => console.log("delete"),
+            delete: () => deleteFile({ fileId: file.$id, bucketFileId: file.bucketFileId, path }),
         }
 
         success = await actions[action.value as keyof typeof actions]();
@@ -104,6 +104,12 @@ const ActionsDrowdown = ({ file }: { file: Models.Document }) => {
                     )}
                     {value === "share" && (
                         <ShareInput file={file} onInputChange={setEmails} onRemove={handleRemoveUser} />
+                    )}
+                    {value === "delete" && (
+                        <p className="delete-confirmation">
+                            Are you sure you want to delete{` `}
+                            <span className="delete-file-name">{file.name}</span>?
+                        </p>
                     )}
                     {deleteShareError && (
                         <p className="error-message text-center">Only the file owner can remove users.</p>
