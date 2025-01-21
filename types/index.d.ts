@@ -36,6 +36,11 @@ declare interface UpdateFileUsersProps {
     emails: string[];
     path: string;
 }
+declare interface RemoveFileUserProps {
+    fileId: string;
+    removeEmail: string;
+    path: string;
+}
 declare interface DeleteFileProps {
     fileId: string;
     bucketFileId: string;

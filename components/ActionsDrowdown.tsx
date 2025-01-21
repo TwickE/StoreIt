@@ -7,7 +7,6 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog"
-
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -24,9 +23,10 @@ import { Models } from "node-appwrite";
 import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { renameFile } from "@/lib/actions/file.actions";
+import { renameFile, updateFileUsers, removeFileUser } from "@/lib/actions/file.actions";
 import { usePathname } from "next/navigation";
-import { FileDetails } from "@/components/ActionsModalContent";
+import { FileDetails, ShareInput } from "@/components/ActionsModalContent";
+import { getCurrentUser } from "@/lib/actions/user.actions";
 
 const ActionsDrowdown = ({ file }: { file: Models.Document }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,6 +34,8 @@ const ActionsDrowdown = ({ file }: { file: Models.Document }) => {
     const [action, setAction] = useState<ActionType | null>(null);
     const [name, setName] = useState(file.name);
     const [isLoading, setIsLoading] = useState(false);
+    const [emails, setEmails] = useState<string[]>([]);
+    const [deleteShareError, setDeleteShareError] = useState(false)
 
     const path = usePathname();
 
@@ -46,7 +48,8 @@ const ActionsDrowdown = ({ file }: { file: Models.Document }) => {
         setIsDropdownOpen(false);
         setAction(null);
         setName(file.name);
-        //set emails
+        setDeleteShareError(false);
+        setEmails([]);
     }
 
     const handleAction = async () => {
@@ -56,7 +59,7 @@ const ActionsDrowdown = ({ file }: { file: Models.Document }) => {
 
         const actions = {
             rename: () => renameFile({ fileId: file.$id, name, extension: file.extension, path }),
-            share: () => console.log("share"),
+            share: () => updateFileUsers({ fileId: file.$id, emails, path }),
             delete: () => console.log("delete"),
         }
 
@@ -64,6 +67,19 @@ const ActionsDrowdown = ({ file }: { file: Models.Document }) => {
 
         if (success) closeAllModels();
         setIsLoading(false);
+    }
+
+    const handleRemoveUser = async (email: string) => {
+        const currentUser = await getCurrentUser();
+
+        if (currentUser.$id !== file.owner.$id) {
+            setDeleteShareError(true);
+            return;
+        }
+
+        await removeFileUser({ fileId: file.$id, removeEmail: email, path });
+
+        closeAllModels();
     }
 
     const renderDialogContent = () => {
@@ -85,6 +101,12 @@ const ActionsDrowdown = ({ file }: { file: Models.Document }) => {
                     )}
                     {value === "details" && (
                         <FileDetails file={file} />
+                    )}
+                    {value === "share" && (
+                        <ShareInput file={file} onInputChange={setEmails} onRemove={handleRemoveUser} />
+                    )}
+                    {deleteShareError && (
+                        <p className="error-message text-center">Only the file owner can remove users.</p>
                     )}
                 </DialogHeader>
                 {["rename", "share", "delete"].includes(value) && (

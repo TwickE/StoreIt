@@ -13,7 +13,7 @@ const handleError = (error: unknown, message: string) => {
     throw error;
 }
 
-export const uploadFile = async ({file, ownerId, accountId, path}: UploadFileProps) => {
+export const uploadFile = async ({ file, ownerId, accountId, path }: UploadFileProps) => {
     const { storage, databases } = await createAdminClient();
 
     try {
@@ -76,7 +76,7 @@ export const getFiles = async () => {
     try {
         const currentUser = await getCurrentUser();
 
-        if(!currentUser) {
+        if (!currentUser) {
             throw new Error("User not found");
         }
 
@@ -105,12 +105,70 @@ export const renameFile = async ({ fileId, name, extension, path }: RenameFilePr
             fileId,
             {
                 name: newName,
-            } 
+            }
         );
 
         revalidatePath(path);
         return parseStringify(updatedFile);
     } catch (error) {
         handleError(error, "Failed to rename file");
+    }
+}
+
+export const updateFileUsers = async ({ fileId, emails, path }: UpdateFileUsersProps) => {
+    const { databases } = await createAdminClient();
+
+    try {
+        const currentFile = await databases.listDocuments(
+            appwriteConfig.databaseId,
+            appwriteConfig.filesCollectionId,
+            [Query.equal("$id", [fileId])],
+        );
+
+        const currentEmails = currentFile.documents[0].users;
+        currentEmails.push(...emails);
+
+        const updatedFile = await databases.updateDocument(
+            appwriteConfig.databaseId,
+            appwriteConfig.filesCollectionId,
+            fileId,
+            {
+                users: currentEmails,
+            }
+        );
+
+        revalidatePath(path);
+        return parseStringify(updatedFile);
+    } catch (error) {
+        handleError(error, "Failed to share file");
+    }
+}
+
+export const removeFileUser = async ({ fileId, removeEmail, path }: RemoveFileUserProps) => {
+    const { databases } = await createAdminClient();
+
+    try {
+        const currentFile = await databases.listDocuments(
+            appwriteConfig.databaseId,
+            appwriteConfig.filesCollectionId,
+            [Query.equal("$id", [fileId])],
+        );
+
+        const currentEmails = currentFile.documents[0].users;
+        const updatedEmails = currentEmails.filter((email: string) => email !== removeEmail);
+
+        const updatedFile = await databases.updateDocument(
+            appwriteConfig.databaseId,
+            appwriteConfig.filesCollectionId,
+            fileId,
+            {
+                users: updatedEmails,
+            }
+        );
+
+        revalidatePath(path);
+        return parseStringify(updatedFile);
+    } catch (error) {
+        handleError(error, "Failed to remove user from file");
     }
 }
