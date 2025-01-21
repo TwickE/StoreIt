@@ -7,7 +7,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { Models } from "node-appwrite";
 import { getFiles } from "@/lib/actions/file.actions";
 import Thumbnail from "@/components/Thumbnail";
-import FormatedDateTime from "@/components/FormatedDateTime";
+import FormatedDateTime from "@/components/FormattedDateTime";
 import { useRouter } from "next/navigation";
 import { useDebounce } from 'use-debounce';
 

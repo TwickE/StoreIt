@@ -1,6 +1,6 @@
 import { Models } from "node-appwrite"
 import Thumbnail from "@/components/Thumbnail"
-import FormatedDateTime from "@/components/FormatedDateTime"
+import FormatedDateTime from "@/components/FormattedDateTime"
 import { convertFileSize, formatDateTime } from "@/lib/utils"
 import { Dispatch, SetStateAction } from "react"
 import { Input } from "@/components/ui/input"
