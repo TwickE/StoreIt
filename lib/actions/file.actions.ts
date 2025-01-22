@@ -185,7 +185,6 @@ export const removeFileUser = async ({ fileId, removeEmail, path }: RemoveFileUs
     }
 }
 
-
 export const deleteFile = async ({ fileId, bucketFileId, path }: DeleteFileProps) => {
     const { databases, storage } = await createAdminClient();
 
@@ -206,7 +205,7 @@ export const deleteFile = async ({ fileId, bucketFileId, path }: DeleteFileProps
         revalidatePath(path);
         return parseStringify({ status: "success" });
     } catch (error) {
-        handleError(error, "Failed to share file");
+        handleError(error, "Failed to delete file");
     }
 }
 
