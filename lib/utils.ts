@@ -196,6 +196,7 @@ export const getUsageSummary = (totalSpace: any) => {
             size: totalSpace.document.size,
             latestDate: totalSpace.document.latestDate,
             icon: '/assets/icons/file-document-light.svg',
+            iconDark: '/assets/icons/file-document-dark.svg',
             url: '/documents',
         },
         {
@@ -203,6 +204,7 @@ export const getUsageSummary = (totalSpace: any) => {
             size: totalSpace.image.size,
             latestDate: totalSpace.image.latestDate,
             icon: '/assets/icons/file-image-light.svg',
+            iconDark: '/assets/icons/file-image-dark.svg',
             url: '/images',
         },
         {
@@ -213,6 +215,7 @@ export const getUsageSummary = (totalSpace: any) => {
                     ? totalSpace.video.latestDate
                     : totalSpace.audio.latestDate,
             icon: '/assets/icons/file-video-light.svg',
+            iconDark: '/assets/icons/file-video-dark.svg',
             url: '/media',
         },
         {
@@ -220,6 +223,7 @@ export const getUsageSummary = (totalSpace: any) => {
             size: totalSpace.other.size,
             latestDate: totalSpace.other.latestDate,
             icon: '/assets/icons/file-other-light.svg',
+            iconDark: '/assets/icons/file-other-dark.svg',
             url: '/others',
         },
     ];

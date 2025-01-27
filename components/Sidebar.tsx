@@ -46,7 +46,7 @@ const Sidebar = ({ fullName, avatar, email }: Props) => {
                                     height={24}
                                     className={cn("nav-icon", pathname === url && "nav-icon-active")}
                                 />
-                                <p className='hidden lg:block'>{name}</p>
+                                <p className='hidden lg:block dark:text-light-400'>{name}</p>
                             </li>
                         </Link>
                     ))}

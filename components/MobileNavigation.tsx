@@ -16,6 +16,8 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import FileUploader from "@/components/FileUploader";
 import { signOutUser } from "@/lib/actions/user.actions";
+import Theme from "@/components/Theme";
+import { Menu } from "lucide-react"
 
 interface Props {
     $id: string;
@@ -40,11 +42,10 @@ const MobileNavigation = ({ $id: ownerId, accountId, fullName, avatar, email }: 
             />
             <Sheet open={open} onOpenChange={setOpen}>
                 <SheetTrigger>
-                    <Image
-                        src="/assets/icons/menu.svg"
-                        alt="menu icon"
+                    <Menu 
                         width={30}
                         height={30}
+                        className="text-[rgba(51,63,78,0.5)] dark:text-light-200"
                     />
                 </SheetTrigger>
                 <SheetContent className="shad-sheet h-screen px-3">
@@ -85,6 +86,7 @@ const MobileNavigation = ({ $id: ownerId, accountId, fullName, avatar, email }: 
                     <Separator className="my-5 bg-light-200/20" />
                     <div className="flex flex-col justify-between gap-5 pb-5">
                         <FileUploader ownerId={ownerId} accountId={accountId} />
+                        <Theme mobile={true} />
                         <Button type='submit' className='mobile-sign-out-button' onClick={async () => await signOutUser()}>
                             <Image
                                 src='/assets/icons/logout.svg'

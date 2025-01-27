@@ -5,7 +5,7 @@ import { convertFileSize, formatDateTime } from "@/lib/utils"
 import { Dispatch, SetStateAction } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
+import { CircleX } from 'lucide-react';
 
 const ImageThumbnail = ({ file }: { file: Models.Document }) => {
     return (
@@ -71,12 +71,10 @@ export const ShareInput = ({ file, onInputChange, onRemove }: Props) => {
                             <li key={email} className="flex items-center justify-between gap-2">
                                 <p className="subtitle-2">{email}</p>
                                 <Button onClick={() => onRemove(email)} className="share-remove-user">
-                                    <Image
-                                        src="/assets/icons/remove.svg"
-                                        alt="remove"
+                                    <CircleX
                                         width={24}
                                         height={24}
-                                        className="remove-icon"
+                                        className="text-[rgba(51,63,78,0.5)] dark:text-light-200"
                                     />
                                 </Button>
                             </li>
