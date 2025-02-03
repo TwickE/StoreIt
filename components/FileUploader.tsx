@@ -10,6 +10,7 @@ import { MAX_FILE_SIZE } from '@/constants';
 import { useToast } from "@/hooks/use-toast"
 import { uploadFile } from '@/lib/actions/file.actions';
 import { usePathname } from 'next/navigation';
+import { CircleX } from 'lucide-react';
 
 
 interface Props {
@@ -53,7 +54,7 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
     }, [ownerId, accountId, path, toast]);
     const { getRootProps, getInputProps } = useDropzone({ onDrop })
 
-    const handleRemoveFile = (e: MouseEvent<HTMLImageElement>, fileName: string) => {
+    const handleRemoveFile = (e: MouseEvent<HTMLButtonElement>, fileName: string) => {
         e.stopPropagation();
         setFiles((prevFiles) => {
             return prevFiles.filter((file) => file.name !== fileName);
@@ -74,7 +75,7 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
             </Button>
             {files.length > 0 && (
                 <ul className='uploader-preview-list'>
-                    <h4 className='h4 text-light-100'>Uploading</h4>
+                    <h4 className='h4 text-light-100 dark:text-light-400'>Uploading</h4>
                     {files.map((file: File, index: number) => {
                         const { type, extension } = getFileType(file.name);
 
@@ -96,13 +97,13 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
                                         />
                                     </div>
                                 </div>
-                                <Image
-                                    src="/assets/icons/remove.svg"
-                                    alt='remove'
-                                    width={24}
-                                    height={24}
-                                    onClick={(e) => handleRemoveFile(e, file.name)}
-                                />
+                                <Button onClick={(e) => handleRemoveFile(e, file.name)} className="share-remove-user">
+                                    <CircleX
+                                        width={24}
+                                        height={24}
+                                        className="text-[rgba(51,63,78,0.5)] dark:text-light-200"
+                                    />
+                                </Button>
                             </li>
                         )
                     })}

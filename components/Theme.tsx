@@ -54,15 +54,15 @@ const Theme = ({ mobile }: { mobile: boolean }) => {
                 </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-                <DropdownMenuItem className={cn("cursor-pointer", theme === "light" ? "text-brand" : "")} onClick={() => setTheme('light')}>
+                <DropdownMenuItem className={cn("cursor-pointer", theme === "light" ? "text-brand focus:!text-brand" : "")} onClick={() => setTheme('light')}>
                     <Sun className={theme === "light" ? "stroke-brand" : ""} />
                     Light
                 </DropdownMenuItem>
-                <DropdownMenuItem className={cn("cursor-pointer", theme === "dark" ? "text-brand" : "")} onClick={() => setTheme('dark')}>
+                <DropdownMenuItem className={cn("cursor-pointer", theme === "dark" ? "text-brand focus:!text-brand" : "")} onClick={() => setTheme('dark')}>
                     <MoonStar className={theme === "dark" ? "stroke-brand" : ""} />
                     Dark
                 </DropdownMenuItem>
-                <DropdownMenuItem className={cn("cursor-pointer", theme === "system" ? "text-brand" : "")} onClick={() => setTheme('system')}>
+                <DropdownMenuItem className={cn("cursor-pointer", theme === "system" ? "text-brand focus:!text-brand" : "")} onClick={() => setTheme('system')}>
                     <Monitor className={theme === "system" ? "stroke-brand" : ""} />
                     System
                 </DropdownMenuItem>

@@ -145,7 +145,7 @@
     }
 
     .shad-alert-dialog {
-        @apply space-y-4 max-w-[95%] sm:w-fit rounded-xl md:rounded-[30px] px-4 md:px-8 py-10 bg-white outline-none !important;
+        @apply space-y-4 max-w-[95%] sm:w-fit rounded-xl md:rounded-[30px] px-4 md:px-8 py-10 bg-white dark:bg-slate-800 outline-none !important;
     }
 
     .shad-submit-btn {
@@ -332,7 +332,7 @@
 
     /* Card */
     .file-card {
-        @apply flex cursor-pointer flex-col gap-6 rounded-[18px] bg-white dark:bg-slate-800 p-5 shadow-sm transition-all hover:shadow-drop-3 !important;
+        @apply flex cursor-pointer flex-col gap-6 rounded-[18px] bg-white dark:bg-slate-800 p-5 shadow-sm transition-all hover:shadow-drop-1 !important;
     }
 
     .file-card-details {
@@ -341,7 +341,7 @@
 
     /* Chart */
     .chart {
-        @apply flex items-center rounded-[20px] bg-brand p-2 text-white md:flex-col xl:flex-row !important;
+        @apply flex items-center rounded-[20px] bg-brand p-2 text-white shadow-drop-2 md:flex-col xl:flex-row !important;
     }
 
     .chart-container {
@@ -374,11 +374,11 @@
     }
 
     .uploader-preview-list {
-        @apply fixed bottom-10 right-10 z-50 flex size-full h-fit max-w-[480px] flex-col gap-3 rounded-[20px] bg-white p-7 shadow-drop-3 !important;
+        @apply fixed bottom-10 right-10 z-50 flex size-full h-fit max-w-[480px] flex-col gap-3 rounded-[20px] bg-white dark:bg-slate-800 p-7 shadow-drop-1 !important;
     }
 
     .uploader-preview-item {
-        @apply flex items-center justify-between gap-3 rounded-xl p-3 shadow-drop-3 !important;
+        @apply flex items-center justify-between gap-3 rounded-xl p-3 shadow-drop-1 !important;
     }
 
     .preview-item-name {
@@ -442,7 +442,7 @@
     }
 
     .search-input-wrapper {
-        @apply flex h-[52px] flex-1 items-center gap-3 rounded-full px-4 shadow-drop-3 dark:bg-dark-150 !important;
+        @apply flex h-[52px] flex-1 items-center gap-3 rounded-full px-4 shadow-drop-1 dark:bg-dark-150 !important;
     }
 
     .search-input {
@@ -488,7 +488,7 @@
     }
 
     .sort-select-content {
-        @apply !shadow-drop-3 dark:bg-slate-800 !important;
+        @apply !shadow-drop-1 dark:bg-slate-800 !important;
     }
 
     /* Thumbnail */

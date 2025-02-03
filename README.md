@@ -25,6 +25,7 @@ A storage management and file sharing platform that lets users effortlessly uplo
  - Global Search: Users can quickly find files and shared content across the platform with a robust global search feature.
  - Sorting Options: Organize files efficiently by sorting them by date, name, or size, making file management a breeze.
  - Modern Responsive Design: A fresh and minimalist UI that emphasizes usability, ensuring a clean aesthetic across all devices.
+ - Dark Mode: Seamlessly switch between light and dark themes for a comfortable and visually appealing user experience in any environment.
 
 ## Sign-In Page Desktop
 ![Sign-In Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItSignIn.png?raw=true)

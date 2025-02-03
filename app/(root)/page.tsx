@@ -54,7 +54,7 @@ const Dashboard = async () => {
 
             {/* Recent files uploaded */}
             <section className="dashboard-recent-files">
-                <h2 className="h3 xl:h2 text-light-100 dark:text-light-400">Recent files uploaded</h2>
+                <h2 className="h3 xl:h2 text-light-100 dark:text-light-400">Recent Files Uploaded</h2>
                 {files.documents.length > 0 ? (
                     <ul className="mt-5 flex flex-col gap-5">
                         {files.documents.map((file: Models.Document) => (
