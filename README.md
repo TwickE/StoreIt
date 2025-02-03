@@ -33,14 +33,23 @@ A storage management and file sharing platform that lets users effortlessly uplo
 ## Sign-Up Page Desktop
 ![Sign-Up Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItSignUp.png?raw=true)
 
-## Dashboard Page Desktop
-![Dashboard Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItDashboard.png?raw=true)
+## Dashboard Light Page Desktop
+![Dashboard Light Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItDashboardLight.png?raw=true)
 
-## Files Page Desktop
-![Files Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItOptionsMenu.png?raw=true)
+## Dashboard Dark Page Desktop
+![Dashboard Dark Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItDashboardDark.png?raw=true)
+
+## Files Light Page Desktop
+![Files Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItMenuLight.png?raw=true)
+
+## Files Dark Page Desktop
+![Files Dark Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItMenuDark.png?raw=true)
 
 ## Sign-In and Sign-Up Page Mobile
 ![Sign-In and Sign-Up Page Mobile](https://github.com/TwickE/ReadmeImages/blob/main/StoreItMobile1.png?raw=true)
 
-## Dashboard, Files and Menu Page Mobile
-![Dashboard, Files and Menu Page Mobile](https://github.com/TwickE/ReadmeImages/blob/main/StoreItMobile2.png?raw=true)
+## Dashboard, Files and Menu Light Pages Mobile
+![Dashboard, Files and Menu Light Pages Page Mobile](https://github.com/TwickE/ReadmeImages/blob/main/StoreItMobile2.png?raw=true)
+
+## Dashboard, Files and Menu Dark Pages Mobile
+![Dashboard, Files and Menu Dark Pages Page Mobile](https://github.com/TwickE/ReadmeImages/blob/main/StoreItMobile2Dark.png?raw=true)
