@@ -2,7 +2,7 @@
 A storage management and file sharing platform that lets users effortlessly upload, organize, and share files.
 
 ## Live Demo
-[Visit StoreIt](https://store-it-seven-nu.vercel.app)
+[Visit StoreIt](https://store-it-twickes-projects.vercel.app/)
 
 ## Tech Stack
 - HTML5
