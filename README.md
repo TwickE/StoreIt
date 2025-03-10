@@ -28,28 +28,28 @@ A storage management and file sharing platform that lets users effortlessly uplo
  - Dark Mode: Seamlessly switch between light and dark themes for a comfortable and visually appealing user experience in any environment.
 
 ## Sign-In Page Desktop
-![Sign-In Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItSignIn.png?raw=true)
+![Sign-In Page Desktop](https://github.com/user-attachments/assets/77fa39bb-2f34-47b4-a512-9f478a227440)
 
 ## Sign-Up Page Desktop
-![Sign-Up Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItSignUp.png?raw=true)
+![Sign-Up Page Desktop](https://github.com/user-attachments/assets/bf0cc281-fdf6-4169-8c8e-bff85d2af75c)
 
 ## Dashboard Light Page Desktop
-![Dashboard Light Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItDashboardLight.png?raw=true)
+![Dashboard Light Page Desktop](https://github.com/user-attachments/assets/f97d372c-5fd6-4957-8062-9089012d3c0a)
 
 ## Dashboard Dark Page Desktop
-![Dashboard Dark Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItDashboardDark.png?raw=true)
+![Dashboard Dark Page Desktop](https://github.com/user-attachments/assets/7b57af5d-14b3-42eb-adb7-316eb015f063)
 
 ## Files Light Page Desktop
-![Files Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItMenuLight.png?raw=true)
+![Files Page Desktop](https://github.com/user-attachments/assets/98ba4a1e-0295-4b3a-a361-caeaddf50eac)
 
 ## Files Dark Page Desktop
-![Files Dark Page Desktop](https://github.com/TwickE/ReadmeImages/blob/main/StoreItMenuDark.png?raw=true)
+![Files Dark Page Desktop](https://github.com/user-attachments/assets/decc38a9-447a-4704-a00e-61c7480ad492)
 
 ## Sign-In and Sign-Up Page Mobile
-![Sign-In and Sign-Up Page Mobile](https://github.com/TwickE/ReadmeImages/blob/main/StoreItMobile1.png?raw=true)
+![Sign-In and Sign-Up Page Mobile](https://github.com/user-attachments/assets/278a7e66-9875-469b-924b-1b4d564deb0f)
 
 ## Dashboard, Files and Menu Light Pages Mobile
-![Dashboard, Files and Menu Light Pages Page Mobile](https://github.com/TwickE/ReadmeImages/blob/main/StoreItMobile2.png?raw=true)
+![Dashboard, Files and Menu Light Pages Page Mobile](https://github.com/user-attachments/assets/a844d885-2da5-4610-bbf1-c0e62e4fca98)
 
 ## Dashboard, Files and Menu Dark Pages Mobile
-![Dashboard, Files and Menu Dark Pages Page Mobile](https://github.com/TwickE/ReadmeImages/blob/main/StoreItMobile2Dark.png?raw=true)
+![Dashboard, Files and Menu Dark Pages Page Mobile](https://github.com/user-attachments/assets/d88f6f7d-4575-4817-9b97-2c19eb1e8070)
